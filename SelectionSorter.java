@@ -15,7 +15,7 @@ public class SelectionSorter extends Sorter{
 
     private static <T extends Comparable<T>> void selectionSort(List<T> unordered) {
         for (int i = 0; i < unordered.size(); i++) {
-            //System.out.println("Sorting: " + i + ", " + unordered);
+            System.out.println("Sorting: " + i + ", " + unordered);
             swap(unordered, i, champIndex(unordered, i));
         }
     }

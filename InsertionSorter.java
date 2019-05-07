@@ -9,6 +9,7 @@ public class InsertionSorter extends Sorter{
 
     public static <T extends Comparable<T>> void insertionSort(List<T> list) {
         for (int currentIndex = 1; currentIndex < list.size(); currentIndex++) {
+            System.out.println("Sorting: " + currentIndex + ", " + list);
             insert1(list, currentIndex);
         }
     }
