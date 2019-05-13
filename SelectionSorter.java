@@ -11,7 +11,7 @@ public class SelectionSorter extends Sorter{
      * pre-conditions: challengers != null, idx1 and idx2 are valid indices of challenges
      * post-conditions: the values at index idx1 and idx2 will have been swapped
      */
-    private static <T> void swap(List<T> challengers, int idx1, int idx2) {
+    private <T> void swap(List<T> challengers, int idx1, int idx2) {
         T temp = challengers.get(idx2);
         challengers.set(idx2, challengers.get(idx1));
         challengers.set(idx1, temp);
@@ -23,7 +23,7 @@ public class SelectionSorter extends Sorter{
      * swaps the index from champIndex with the index currently being iterated through
      * post-conditions: unordered will be sorted by its natural ordering
      */
-    private static <T extends Comparable<T>> void selectionSort(List<T> unordered) {
+    private <T extends Comparable<T>> void selectionSort(List<T> unordered) {
         for (int i = 0; i < unordered.size(); i++) {
             System.out.println("Sorting: " + i + ", " + unordered);
             swap(unordered, i, champIndex(unordered, i));
@@ -35,7 +35,7 @@ public class SelectionSorter extends Sorter{
      * synopsis: finds the minimum value in the unsorted portion of the list
      * post-conditions: N/A
      */
-    private static <T extends Comparable<T>> int champIndex(List<T> challengers, int start) {
+    private <T extends Comparable<T>> int champIndex(List<T> challengers, int start) {
         T minVal = null;
         int minIndex = 0;
         for (int i = start; i < challengers.size(); i++) {

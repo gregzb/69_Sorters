@@ -12,7 +12,7 @@ public class InsertionSorter extends Sorter{
      * synopsis: runs insert1 for positions 1 through unordered.size()-1 in the list
      * post-conditions: unordered will be sorted by its natural ordering
      */
-    public static <T extends Comparable<T>> void insertionSort(List<T> list) {
+    public <T extends Comparable<T>> void insertionSort(List<T> list) {
         for (int currentIndex = 1; currentIndex < list.size(); currentIndex++) {
             System.out.println("Sorting: " + currentIndex + ", " + list);
             insert1(list, currentIndex);
@@ -26,7 +26,7 @@ public class InsertionSorter extends Sorter{
      * post-conditions: the next value will have been sorted and the sorted
      * region will have expanded by 1
      */
-    private static <T extends Comparable<T>> void insert1(List<T> list, int numSorted) {
+    private <T extends Comparable<T>> void insert1(List<T> list, int numSorted) {
         T valueToInsert = list.get(numSorted);
         int indexToCompare;
         for (indexToCompare = numSorted - 1; indexToCompare >= 0; indexToCompare--) {
